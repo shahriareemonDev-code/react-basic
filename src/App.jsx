@@ -1,65 +1,33 @@
 
 import './App.css'
-import ToDo from './ToDo';
-import Actor from './Actor'
-import Singer from './Singer';
+import Player from './Player'
 
 function App() {
-    const actors = ['bapparaj', 'omar sany', 'salman shah'];
+    
+ function handleClick () {
+  alert('I am clicked')
+ }
 
-   const singers = [
-    {id:1, name: 'Dr. Mahfuz', age: 68},
-    {id:2, name: 'Tahsan', age: 40},
-    {id:3, name: 'Salman Shah', age: 45}
-   ]
+ const handleClick3 = () => {
+  alert('clicked 3')
+ }
 
-
-  // const time = 50; 
-  
-
+ const handleAdd5 = (num) => {
+  const newNum = num+5;
+  alert(newNum);
+ }
+   
   return ( 
     <>
      <h1>Vite + React</h1>
 
-     {
-      singers.map(singer => <Singer singer={singer}> </Singer> )
-     }
-
-     {
-      actors.map(actor => <Actor actor={actor}> </Actor>)
-     }
+     <button onClick={handleClick} >Click Me</button>
+     <button onClick={handleClick3} >Click Me 3</button>
+     <button onClick={() => alert ('click 4')} >Click Me 4</button>
+     <button onClick={() => handleAdd5(10)} >Click Me 5</button>
 
 
-     {/* <ToDo task =  "Learn React" isDone ={true} time= {time} > </ToDo>
-     <ToDo task =  "Learn Js" isDone ={true} time= {time} > </ToDo>
-     <ToDo task =  "Learn Python" isDone ={false} > </ToDo> */}
-
-
-    <Person> </Person>
-    <Nopp> </Nopp>
-    </>
-  )
-}
-
-function Person() {
-  const age = 27;
-  const name = "Emon";
-  return (
-    <p>I am a Person : {name} {age}</p>
-  )
-}
-
-function Nopp() {
-
-  
-
-  return(
-    <> 
-    <h1>React core concept is revising..</h1>
-    <p>opore P tag ta niye astisi.. </p>
-    <Person> </Person>
-
-    <ToDo> </ToDo>
+     <Player> </Player>
      </>
   )
 }
